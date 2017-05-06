@@ -16,4 +16,7 @@ apt-cache policy docker-engine -qq
 sudo apt-get install -y docker-engine
 sudo usermod -aG docker ubuntu
 
+chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa.pub
+
 echo 'Finished running configure.sh' 

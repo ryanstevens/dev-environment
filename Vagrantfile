@@ -14,11 +14,11 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder "../", "/home/ubuntu/projects"
 
-  config.vm.provision "shell", path: "./scripts/configure.sh"
-
+  #copy files so we can git push
   config.vm.provision "file", source: "../keys/.gitconfig", destination: "/home/ubuntu/.gitconfig"
-
   config.vm.provision "file", source: "../keys/id_rsa", destination: "/home/ubuntu/.ssh/id_rsa"
   config.vm.provision "file", source: "../keys/id_rsa.pub", destination: "/home/ubuntu/.ssh/id_rsa.pub"
+
+  config.vm.provision "shell", path: "./scripts/configure.sh"
   
 end
